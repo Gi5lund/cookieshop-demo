@@ -10,10 +10,12 @@ public class Basket {
     }
 
     public List<Cookie> getCookieList() {
+
         return cookieList;
     }
 
     public void setCookieList(List<Cookie> cookieList) {
+
         this.cookieList = cookieList;
     }
 }

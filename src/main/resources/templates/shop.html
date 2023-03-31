@@ -20,11 +20,12 @@
           <td>Cookie Type</td>
           <td>Price</td>
           <td>Buy</td>
+
         </tr>
             <tr th:each="cookie : ${cookies}">
             <td th:text="${cookie.getName()}"></td>
             <td th:text="${cookie.getPrice()}"></td>
-            <td><a class="btn btn-success" th:href="@{/addToBasket(id=${cookie.getId()})}">Add to basket</a></td>
+            <td><a class="btn btn-success" th:href="@{/addToBasket('id'=${cookie.getId()})}">Add to basket</a></td>
         </tr>
     </table>
 </div>

@@ -12,11 +12,22 @@
             <a class="navbar-brand" href="/shop">Shop</a>
             <a class="navbar-brand" href="/basket">Basket</a>
         </nav>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
 
-        <tr th:each="cookie : ${basket}">
-            <td th:text="cookie.getName()"></td>
-            <td th:text="cookie.getPrice()"></td>
-        </tr>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cookie : ${session.basket.getCookieList()}">
+                    <td th:text="${cookie.getName()}"></td>
+                    <td th:text="${cookie.getPrice()}"></td>
+                    <td th:text="${total}"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
