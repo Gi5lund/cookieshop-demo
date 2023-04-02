@@ -7,11 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/shop">Shop</a>
-            <a class="navbar-brand" href="/basket">Basket</a>
-        </nav>
+        <nav th:replace="fragments/navbar :: nav-bar">  </nav>
         <table class="table table-striped">
             <thead>
             <tr>
@@ -25,6 +21,7 @@
                     <td th:text="${cookie.getName()}"></td>
                     <td th:text="${cookie.getPrice()}"></td>
                     <td th:text="${total}"></td>
+                    <td th:text="${session.basket.getCookieList().size()}"></td>
                 </tr>
             </tbody>
         </table>
