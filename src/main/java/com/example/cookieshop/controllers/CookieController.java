@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
@@ -57,7 +58,14 @@ public class CookieController {
 
         return "redirect:/basket";
     }
+    @PostMapping("/login")
+    public String login(@RequestParam("username") String username,@RequestParam("pwd") String password){
+        if (username.equals("Morten") && password.equals("123")){
+            return "testretur";
 
+        }
+        return "login";
+    }
 //    @GetMapping("/addToBasket")
 //    public String add(@RequestParam String id){
 //        return "";
