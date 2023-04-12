@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link rel="stylesheet" href="../static/login.css">
+  <link rel="stylesheet" th:href="@{../login.css}" href="../static/login.css">
 </head>
 <body>
 <div class="login-box">
@@ -17,13 +17,13 @@
       <input id="password" type="password" name="pwd" required="">
       <label for="password">Password</label>
     </div>
-    <a href="#">
-      <input type="submit" hidden="">
+    <a>
+
       <span></span>
       <span></span>
       <span></span>
       <span></span>
-      Submit
+      <input type="submit" value="Submit">
     </a>
   </form>
 </div>

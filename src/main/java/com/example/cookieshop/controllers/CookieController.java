@@ -6,7 +6,7 @@ import com.example.cookieshop.repositories.CookieRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,6 +20,8 @@ public class CookieController {
 
     @GetMapping("/")
     public String index(HttpSession session){
+        int item=0;
+        session.setAttribute("user",item);
         return "index";
     }
 
@@ -65,6 +67,10 @@ public class CookieController {
 
         }
         return "login";
+    }
+    @GetMapping("/login")
+    public String showLogin(){
+        return "/login";
     }
 //    @GetMapping("/addToBasket")
 //    public String add(@RequestParam String id){

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,7 +8,7 @@
 <nav th:fragment="nav-bar" class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="/">Home</a>
   <a class="navbar-brand" href="/shop">Shop</a>
-  <a class="navbar-brand" href="/basket">Basket:<span th:text="${session.basket.getCookieList().size()}"></span> </a>
+  <a class="navbar-brand" href="/basket">Basket:<span th:if="${ not session.isEmpty()}" th:text="${session.basket.getCookieList().size()}"></span> </a>
 </nav>
 </body>
 </html>
