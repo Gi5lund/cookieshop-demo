@@ -19,9 +19,12 @@ public class CookieController {
     CookieRepository repo=new CookieRepository();
 
     @GetMapping("/")
-    public String index(HttpSession session){
-        int item=0;
-        session.setAttribute("user",item);
+    public String index(HttpSession session,Model basketModel){
+        Basket basket= (Basket) session.getAttribute("basket");
+        if (basket==null){
+            basket=new Basket(new ArrayList<>());
+        }
+        session.setAttribute("basket",basket);
         return "index";
     }
 
